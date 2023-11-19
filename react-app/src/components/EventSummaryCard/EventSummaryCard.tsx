@@ -1,5 +1,5 @@
 import classes from "./EventSummaryCard.module.css"
-import {event} from "../types/types.ts";
+import {event} from "../../types/types.ts";
 
 interface EventSummaryCardProps {
     event : event;

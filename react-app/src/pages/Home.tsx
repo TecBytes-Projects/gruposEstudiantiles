@@ -1,5 +1,5 @@
 import classes from "./Home.module.css";
-import SummarySection from "../components/SummarySection.tsx"
+import SummarySection from "../components/SummarySection/SummarySection.tsx"
 
 /**
  * Home page
