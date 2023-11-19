@@ -1,6 +1,9 @@
 import classes from "./Home.module.css";
 import SummarySection from "../components/SummarySection.tsx"
 
+/**
+ * Home page
+ */
 function Home() {
 	return (
         <>
@@ -18,7 +21,7 @@ function Home() {
             Bienvenido a la página de gestión de grupos estudiantiles de Campus Puebla. Si eres presidente o vicepresidente de grupos te invitamos a crear tu cuenta para poder acceder a la gestión de tu grupo. 
             </p>
         </article>
-        <SummarySection title={"Próximos eventos"} buttonText="Ver todos los eventos"/>
+        <SummarySection title={"Próximos eventos"} buttonText="Ver todos los eventos"><div></div></SummarySection>
         </>
 	);
 }

@@ -1,17 +1,19 @@
 import classes from "./EventSummaryCard.module.css"
+import {event} from "../types/types.ts";
 
 interface EventSummaryCardProps {
-    title : string;
-    date : Date;
-    groupName : string;
+    event : event;
 }
 
-function EventsSummaryCard({title, date, groupName}:EventSummaryCardProps) { 
+/**
+ * A card for displaying events. Ment to be used inside a cards container.
+ */
+function EventsSummaryCard({event}:EventSummaryCardProps) { 
     return(
         <div className={classes.container}>
-            <h3 className={classes.title}>{title}</h3>
-            <p className={classes.date}>{date.toDateString()}</p>
-            <p className={classes.groupName}>{groupName}</p>
+            <h3 className={classes.title}>{event.title}</h3>
+            <p className={classes.date}>{event.date}</p>
+            <p className={classes.groupName}>{event.groupName}</p>
         </div>
     )
 }

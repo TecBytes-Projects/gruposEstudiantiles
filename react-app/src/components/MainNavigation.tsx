@@ -12,6 +12,9 @@ import { HiOutlineBars3 } from "react-icons/hi2";
 
 import classes from "./MainNavigation.module.css";
 
+/**
+ * Nav bar
+ */
 function MainNavigation() {
 	const [openMenu, setOpenMenu] = useState(false);
 	const menuOptions = [
