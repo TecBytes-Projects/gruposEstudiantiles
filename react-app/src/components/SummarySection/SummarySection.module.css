@@ -18,3 +18,10 @@
     font-weight: 900;
     font-size: 1rem;
 }
+
+.cardsContainer{
+    background-color: var(--color-main-yellow);
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}

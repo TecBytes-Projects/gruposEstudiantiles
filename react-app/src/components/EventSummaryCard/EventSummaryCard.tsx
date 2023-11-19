@@ -11,9 +11,10 @@ interface EventSummaryCardProps {
 function EventsSummaryCard({event}:EventSummaryCardProps) { 
     return(
         <div className={classes.container}>
-            <h3 className={classes.title}>{event.title}</h3>
+            <h2 className={classes.title}>{event.title}</h2>
             <p className={classes.date}>{event.date}</p>
-            <p className={classes.groupName}>{event.groupName}</p>
+            <p className={classes.date}>{event.time}</p>
+            <p className={classes.place}>{event.place}</p>
         </div>
     )
 }
