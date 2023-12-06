@@ -1,26 +1,35 @@
 import classes from "./Home.module.css";
 import SummarySection from "../components/SummarySection/SummarySection.tsx";
 import EventsSummaryCard from "../components/EventSummaryCard/EventSummaryCard.tsx";
-import { useState } from "react";
+import BlogSummaryCard from "../components/BlogSummaryCard/BlogSummaryCard.tsx";
+import { event, blogPost } from "../types/types.ts";
+import { useState, useEffect } from "react";
 import axios, { AxiosResponse, AxiosError } from "axios";
 
 /**
  * Home page
  */
 function Home() {
-	const [eventsSummary, setEventsSummary] = useState([]);
-    function getEventsSummary(){
-        axios
-		.get("/events/summary")
-		.then(function (response: AxiosResponse) {
-            console.log(response);
-			setEventsSummary(response.data);
-		})
-		.catch(function (error: AxiosError) {
-			console.log(error);
-		});
-    }
-	getEventsSummary();
+	const [eventsSummary, setEventsSummary] = useState<event[]>([]);
+	const [blogSummary, setBlogSummary] = useState<blogPost[]>([]);
+	useEffect(() => {
+		axios
+			.get("/events/summary")
+			.then(function (response: AxiosResponse) {
+				setEventsSummary(response.data);
+			})
+			.catch(function (error: AxiosError) {
+				console.log(error);
+			});
+		axios
+			.get("/blog/summary")
+			.then(function (response: AxiosResponse) {
+				setBlogSummary(response.data);
+			})
+			.catch(function (error: AxiosError) {
+				console.log(error);
+			});
+	},[]);
 	return (
 		<>
 			<article className={classes.container}>
@@ -44,9 +53,20 @@ function Home() {
 				buttonText="Ver todos los eventos"
 			>
 				{eventsSummary.length > 0 ? (
-					eventsSummary.map((event) => <EventsSummaryCard event={event} />)
+					eventsSummary.map((event) => (
+						<EventsSummaryCard key={event.id} event={event} />
+					))
 				) : (
 					<h2>No hay eventos próximos</h2>
+				)}
+			</SummarySection>
+			<SummarySection title={"Posts recientes"} buttonText="Ver blog">
+				{blogSummary.length > 0 ? (
+					blogSummary.map((blogPost) => (
+						<BlogSummaryCard key={blogPost.id} blogPost={blogPost} />
+					))
+				) : (
+					<h2>No hay post recientes</h2>
 				)}
 			</SummarySection>
 		</>

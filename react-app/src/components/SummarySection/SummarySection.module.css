@@ -23,5 +23,7 @@
     background-color: var(--color-main-yellow);
     display: flex;
     justify-content: space-around;
+    gap: 20px;
     padding: 2rem;
+    min-height: 400px;
 }
