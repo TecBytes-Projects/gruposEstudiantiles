@@ -1,0 +1,27 @@
+.container{
+    flex-grow: 1;
+    background-color: var(--color-white);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.title{
+    color: var(--color-main-yellow);
+}
+
+.date{
+    color: var(--color-main-yellow);
+    font-size: 1rem;
+}
+
+.image{
+    border-radius: 2rem;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
