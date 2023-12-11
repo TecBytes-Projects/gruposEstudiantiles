@@ -24,7 +24,7 @@ function MainNavigation() {
 		},
 		{
 			text: "Calendario de eventos",
-			to: "/calendario",
+			to: "/eventos",
 		},
 		{
 			text: "Blog",

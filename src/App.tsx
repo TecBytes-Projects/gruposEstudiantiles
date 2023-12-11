@@ -1,5 +1,6 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./pages/Home/Home.tsx";
+import Events from "./pages/Events/Events.tsx";
 import RootLayout from "./pages/Root.tsx";
 
 /**
@@ -16,6 +17,10 @@ const router = createHashRouter([
 				index: true,
 				element: <Home />,
 			},
+			{
+				path: "/eventos",
+				element: <Events/>
+			}
 		],
 	},
 ]);

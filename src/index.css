@@ -48,6 +48,10 @@ button{
   padding-block: 1rem;
 }
 
+h1{
+  color: var(--color-main-orange)
+}
+
 @media (max-width: 800px) {
   html{
     font-size: 10px;
