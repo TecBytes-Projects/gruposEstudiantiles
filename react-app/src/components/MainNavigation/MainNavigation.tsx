@@ -38,8 +38,8 @@ function MainNavigation() {
 	return (
 		<header className={classes.header}>
 			<NavLink to={"/"}>
-                <p>LOGO PLACEHOLDER</p>
-			    {/*<img className={classes.logo} src={logo}></img>*/}
+				<p>LOGO PLACEHOLDER</p>
+				{/*<img className={classes.logo} src={logo}></img>*/}
 			</NavLink>
 			{/*This section is hidden in small screens*/}
 			<nav className={classes.navBar}>
@@ -61,6 +61,7 @@ function MainNavigation() {
 			</nav>
 			{/*This section is hidden in big screens*/}
 			<HiOutlineBars3
+				color={"var(--color-main-blue)"}
 				size={70}
 				className={classes.navDropdown}
 				onClick={() => setOpenMenu(true)}
