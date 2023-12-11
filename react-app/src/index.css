@@ -47,3 +47,9 @@ button{
   padding-inline: 1rem;
   padding-block: 1rem;
 }
+
+@media (max-width: 800px) {
+  html{
+    font-size: 10px;
+  }
+}

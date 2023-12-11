@@ -1,7 +1,10 @@
 import { Outlet } from "react-router-dom";
+import MainNavigation from "../components/MainNavigation/MainNavigation.tsx";
+import Footer from "../components/Footer/Footer.tsx";
 
-import MainNavigation from "../components/MainNavigation.tsx";
-
+/**
+ * General Layout
+ */
 function RootLayout() {
   return (
     <>
@@ -9,6 +12,7 @@ function RootLayout() {
       <main>
         <Outlet />
       </main>
+    <Footer />
     </>
   );
 }

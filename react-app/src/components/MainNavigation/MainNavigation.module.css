@@ -46,9 +46,9 @@
 }
 
 .drawer{
-	background-color: var(--color-black);
+	background-color: var(--color-white);
 	height: 100vh;
-	color: var(--color-white);
+	color: var(--color-main-blue);
 	padding-top: 2rem;
 }
 
