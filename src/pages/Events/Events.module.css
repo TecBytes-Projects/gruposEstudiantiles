@@ -1,3 +1,7 @@
 .mainContainer{
     padding: 2rem;
 }
+
+.errorText {
+	color: var(--color-main-orange);
+}

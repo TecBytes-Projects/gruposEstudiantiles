@@ -31,7 +31,7 @@ function Events() {
 					{events.length > 0 ? (
 						events.map((event) => <EventCard key={event.id} event={event}/>)
 					) : (
-						<p>No hay eventos para mostrar</p>
+						<p className={classes.errorText}>No hay eventos para mostrar</p>
 					)}
 				</CardCarousel>
 			</div>
