@@ -1,5 +1,5 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
-import Home from "./pages/Home.tsx";
+import Home from "./pages/Home/Home.tsx";
 import RootLayout from "./pages/Root.tsx";
 
 /**
