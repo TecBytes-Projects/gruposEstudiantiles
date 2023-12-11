@@ -26,4 +26,5 @@
 .place{
     color: var(--color-main-yellow);
     font-size: 1rem;
+    text-align: center;
 }
