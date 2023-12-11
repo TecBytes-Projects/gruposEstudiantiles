@@ -49,12 +49,12 @@
 
 @media (max-width: 1400px) {
 	.container {
-        background-image: url("../assets/background.svg");
+        background-image: url("../../assets/background.svg");
 	}
 }
 
 @media (min-width: 1401px) {
 	.container {
-		background-image: url("../assets/background.svg");
+		background-image: url("../../assets/background.svg");
 	}
 }

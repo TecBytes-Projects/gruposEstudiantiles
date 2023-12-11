@@ -1,8 +1,8 @@
 import classes from "./Home.module.css";
-import SummarySection from "../components/SummarySection/SummarySection.tsx";
-import EventsSummaryCard from "../components/EventSummaryCard/EventSummaryCard.tsx";
-import BlogSummaryCard from "../components/BlogSummaryCard/BlogSummaryCard.tsx";
-import { event, blogPost } from "../types/types.ts";
+import SummarySection from "../../components/SummarySection/SummarySection.tsx";
+import EventsSummaryCard from "../../components/EventSummaryCard/EventSummaryCard.tsx";
+import BlogSummaryCard from "../../components/BlogSummaryCard/BlogSummaryCard.tsx";
+import { event, blogPost } from "../../types/types.ts";
 import { useState, useEffect } from "react";
 import axios, { AxiosResponse, AxiosError } from "axios";
 
