@@ -2,6 +2,7 @@ import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./pages/Home/Home.tsx";
 import Events from "./pages/Events/Events.tsx";
 import Blog from "./pages/Blog/Blog.tsx";
+import ErrorPage from "./pages/ErrorPage/ErrorPage.tsx";
 import RootLayout from "./pages/Root.tsx";
 
 /**
@@ -11,7 +12,7 @@ const router = createHashRouter([
 	{
 		path: "/",
 		element: <RootLayout />,
-		//errorElement: <ErrorPage />,
+		errorElement: <ErrorPage />,
 		id: "root",
 		children: [
 			{
@@ -20,12 +21,12 @@ const router = createHashRouter([
 			},
 			{
 				path: "/eventos",
-				element: <Events/>
+				element: <Events />,
 			},
 			{
 				path: "/blog",
-				element: <Blog/>
-			}
+				element: <Blog />,
+			},
 		],
 	},
 ]);
