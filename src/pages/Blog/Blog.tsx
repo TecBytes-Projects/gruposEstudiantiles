@@ -18,8 +18,7 @@ function Blog() {
 				blogPost.title.toLowerCase().includes(nameSearch)
 			);
 			setDisplayBlog(newBlog);
-		}
-		else{
+		} else {
 			setDisplayBlog(blog);
 		}
 	}, [nameSearch, blog]);
@@ -48,7 +47,7 @@ function Blog() {
 						onChange={(e) => {
 							setNameSearch(e.target.value.toLowerCase());
 						}}
-					></input>
+					/>
 				</div>
 
 				{/*TODO: add button to add new post*/}
