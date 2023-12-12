@@ -10,8 +10,11 @@ import axios, { AxiosResponse, AxiosError } from "axios";
  * Home page
  */
 function Home() {
+	//List of events
 	const [eventsSummary, setEventsSummary] = useState<event[]>([]);
+	//List of blog posts
 	const [blogSummary, setBlogSummary] = useState<blogPost[]>([]);
+	//Get events and blog posts from API
 	useEffect(() => {
 		axios
 			.get("/events/summary")
@@ -30,6 +33,7 @@ function Home() {
 				console.log(error);
 			});
 	}, []);
+
 	return (
 		<>
 			<article className={classes.container}>

@@ -8,10 +8,13 @@ import { useEffect, useState } from "react";
  * Blog page
  */
 function Blog() {
+	//Complete posts list
 	const [blog, setBlog] = useState<blogPost[]>([]);
+	//Filtered blog posts list
 	const [displayBlog, setDisplayBlog] = useState<blogPost[]>([]);
+	//Search field string
 	const [nameSearch, setNameSearch] = useState<string>("");
-
+	//Search by name
 	useEffect(() => {
 		if (nameSearch.length > 0) {
 			const newBlog = blog.filter((blogPost) =>
@@ -22,7 +25,7 @@ function Blog() {
 			setDisplayBlog(blog);
 		}
 	}, [nameSearch, blog]);
-
+	//Get blog posts from API
 	useEffect(() => {
 		axios
 			.get("/blog")

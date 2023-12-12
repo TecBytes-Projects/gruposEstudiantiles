@@ -9,7 +9,10 @@ import { useEffect, useState } from "react";
  * Events page
  */
 function Events() {
+	//List of events
 	const [events, setEvents] = useState<event[]>([]);
+
+	//Get list of events from API
 	useEffect(() => {
 		axios
 			.get("/events")
@@ -20,6 +23,7 @@ function Events() {
 				console.log(error);
 			});
 	}, []);
+
 	return (
 		<section className={classes.mainContainer}>
 			<div className={classes.titleSection}>
@@ -29,7 +33,7 @@ function Events() {
 			<div className={classes.carouselContainer}>
 				<CardCarousel>
 					{events.length > 0 ? (
-						events.map((event) => <EventCard key={event.id} event={event}/>)
+						events.map((event) => <EventCard key={event.id} event={event} />)
 					) : (
 						<p className={classes.errorText}>No hay eventos para mostrar</p>
 					)}
