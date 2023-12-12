@@ -70,7 +70,7 @@ function Grupos() {
 
 			<p className={classes.resultLabel}>
 				{displayGroups.length > 0
-					? displayGroups.length + " resultados"
+					? displayGroups.length + " resultado(s)"
 					: "No hay resultados que coincidan con tu búsqueda"}
 			</p>
 
