@@ -29,7 +29,7 @@ function Home() {
 			.catch(function (error: AxiosError) {
 				console.log(error);
 			});
-	},[]);
+	}, []);
 	return (
 		<>
 			<article className={classes.container}>
@@ -51,6 +51,7 @@ function Home() {
 			<SummarySection
 				title={"Próximos eventos"}
 				buttonText="Ver todos los eventos"
+				buttonLink="/eventos"
 			>
 				{eventsSummary.length > 0 ? (
 					eventsSummary.map((event) => (
@@ -60,7 +61,11 @@ function Home() {
 					<h2>No hay eventos próximos</h2>
 				)}
 			</SummarySection>
-			<SummarySection title={"Posts recientes"} buttonText="Ver blog">
+			<SummarySection
+				title={"Posts recientes"}
+				buttonText="Ver blog"
+				buttonLink="/blog"
+			>
 				{blogSummary.length > 0 ? (
 					blogSummary.map((blogPost) => (
 						<BlogSummaryCard key={blogPost.id} blogPost={blogPost} />
