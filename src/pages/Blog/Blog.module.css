@@ -1,0 +1,13 @@
+.mainContainer{
+    padding: 2rem;
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.errorText {
+	color: var(--color-main-orange);
+}
