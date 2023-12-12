@@ -23,12 +23,20 @@ function MainNavigation() {
 			to: "/",
 		},
 		{
+			text: "Grupos",
+			to: "/grupos",
+		},
+		{
 			text: "Calendario de eventos",
 			to: "/eventos",
 		},
 		{
 			text: "Blog",
 			to: "/blog",
+		},
+		{
+			text: "Documentos",
+			to: "/documentos",
 		},
 		{
 			text: "Iniciar sesión",

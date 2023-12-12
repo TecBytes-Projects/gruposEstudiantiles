@@ -1,0 +1,11 @@
+.mainContainer {
+	padding: 4rem;
+}
+
+.button {
+	background-color: var(--color-main-orange);
+}
+
+.text {
+	color: var(--color-main-red);
+}
