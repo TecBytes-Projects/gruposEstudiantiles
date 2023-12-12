@@ -48,6 +48,13 @@ button{
   padding-block: 1rem;
 }
 
+input {
+  border-radius: 2rem;
+  border-style: none;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
 h1{
   color: var(--color-main-orange)
 }
