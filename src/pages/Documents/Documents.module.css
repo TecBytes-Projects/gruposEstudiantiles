@@ -1,0 +1,89 @@
+.mainContainer {
+	padding: 2rem;
+}
+
+.titleSection {
+	padding-inline: 4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.actionsContainer {
+	display: flex;
+	gap: 1rem;
+}
+
+.giroBtn {
+	background-color: var(--color-main-orange);
+}
+
+.resultLabel {
+	padding-inline: 4rem;
+}
+
+.contenedor2 {
+	display: flex;
+	padding: 5px;
+	flex-wrap: wrap;
+}
+
+.columna2 {
+	flex: 50%;
+	padding: 10px;
+}
+
+section {
+	align-items: center;
+}
+
+ul {
+	list-style-type: none;
+	columns: 2;
+	-webkit-columns: 2;
+	-moz-columns: 2;
+	padding: 0;
+}
+
+li {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	align-content: center;
+	padding: 0.5rem;
+}
+
+li button {
+	background-color: transparent;
+}
+
+li button:hover {
+	background-color: var(--color-main-orange);
+}
+
+.element {
+	display: flex;
+	background-color: var(--color-main-yellow);
+	width: 100%;
+	border-radius: 2rem;
+	justify-content: space-between;
+	padding-inline: 2rem;
+	align-items: center;
+}
+
+.documentName {
+	color: var(--color-main-white);
+}
+
+@media (max-width: 650px) {
+	.columna1 button {
+		font-size: 20px;
+	}
+	.columna2 {
+		flex: 100%;
+	}
+
+	li a button {
+		font-size: 20px;
+	}
+}
