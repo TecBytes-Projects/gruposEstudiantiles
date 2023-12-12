@@ -2,6 +2,10 @@
     padding: 2rem;
 }
 
+.titleSection{
+    padding-inline: 2rem;
+}
+
 .errorText {
 	color: var(--color-main-orange);
 }
