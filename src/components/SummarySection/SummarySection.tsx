@@ -1,5 +1,5 @@
 import classes from "./SummarySection.module.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface SummarySectionProps {
 	title: string;
@@ -18,15 +18,21 @@ function SummarySection({
 	buttonLink,
 	children,
 }: SummarySectionProps) {
+	const navigate = useNavigate();
+	const handleNavigationClick = () => {
+		navigate(buttonLink);
+	};
 	return (
 		<article className={classes.container}>
 			<div className={classes.titleContainer}>
 				<h2 className={classes.title}>{title}</h2>
-				<Link to={buttonLink}>
-					<button className={classes.button} type="button">
-						{buttonText}
-					</button>
-				</Link>
+				<button
+					className={classes.button}
+					type="button"
+					onClick={handleNavigationClick}
+				>
+					{buttonText}
+				</button>
 			</div>
 			<div className={classes.cardsContainer}>{children}</div>
 		</article>
