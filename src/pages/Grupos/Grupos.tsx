@@ -76,10 +76,10 @@ function Grupos() {
 
 			<div className={classes.contenedor2}>
 				<div className={classes.columna2}>
-					<ul>
+					<ul className={classes.list}>
 						{displayGroups.length > 0
 							? displayGroups.map((group) => (
-									<li key={group.id}>
+									<li className={classes.groupElement} key={group.id}>
 										<button onClick={() => handleGroupClick(group.id)}>
 											{group.name}
 										</button>

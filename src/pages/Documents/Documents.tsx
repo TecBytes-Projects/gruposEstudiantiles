@@ -80,10 +80,10 @@ function Documents() {
 
 			<div className={classes.contenedor2}>
 				<div className={classes.columna2}>
-					<ul>
+					<ul className={classes.list}>
 						{displayDocuments.length > 0
 							? displayDocuments.map((document) => (
-									<li key={document.id}>
+									<li className={classes.listItem} key={document.id}>
 										<div className={classes.element}>
 											<p className={classes.documentName}>
 												{document.name + "." + document.docType}

@@ -37,7 +37,7 @@ section {
 	align-items: center;
 }
 
-ul {
+.list {
 	list-style-type: none;
 	columns: 2;
 	-webkit-columns: 2;
@@ -45,7 +45,7 @@ ul {
 	padding: 0;
 }
 
-li {
+.listItem {
 	display: flex;
 	justify-content: center;
 	list-style: none;
@@ -76,6 +76,10 @@ li button:hover {
 }
 
 @media (max-width: 650px) {
+	.titleSection {
+		flex-direction: column;
+	}
+
 	.columna1 button {
 		font-size: 20px;
 	}
@@ -83,7 +87,7 @@ li button:hover {
 		flex: 100%;
 	}
 
-	li a button {
-		font-size: 20px;
+	.list {
+		columns: 1;
 	}
 }
