@@ -1,15 +1,22 @@
-.mainContainer{
-    padding: 2rem;
+.mainContainer {
+	padding: 2rem;
 }
 
-.titleSection{
-    padding-inline: 2rem;
+.titleSection {
+	padding-inline: 4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.cardContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+input {
+	background-color: var(--color-main-orange);
+}
+
+.cardContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .errorText {
