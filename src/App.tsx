@@ -8,6 +8,8 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage.tsx";
 import Login from "./pages/Login/Login.tsx";
 import RecuperContrasenia from "./pages/RecuperarContrasenia/RecuperarContrasenia.tsx";
 import RootLayout from "./pages/Root.tsx";
+import { useEffect } from "react";
+import { useAuth } from "./context/AuthContext.tsx";
 
 /**
  * General routing
@@ -52,6 +54,17 @@ const router = createHashRouter([
 ]);
 
 function App() {
+	const { setUser, setToken } = useAuth();
+	//Check for existing user session
+	useEffect(() => {
+		const user = localStorage.getItem("user");
+		const token = localStorage.getItem("token");
+		if (user && token) {
+			setUser(JSON.parse(user));
+			setToken(JSON.parse(token));
+		}
+	}, []);
+
 	return <RouterProvider router={router} />;
 }
 
