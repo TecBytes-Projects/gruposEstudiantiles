@@ -22,3 +22,9 @@ input {
 .errorText {
 	color: var(--color-main-orange);
 }
+
+@media (max-width: 650px) {
+	.titleSection {
+		flex-direction: column;
+	}
+}
