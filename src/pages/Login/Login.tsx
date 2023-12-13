@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios, { AxiosResponse, AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { user } from "../../types/types.tsx";
+import { useAuth } from "../../context/AuthContext.tsx";
 
 interface errorResponse {
 	message: string;
@@ -20,6 +21,8 @@ interface loginResponse {
  * Login page
  */
 function Login() {
+	// Modifyng the global state to store auth info
+	const { setToken, setUser } = useAuth();
 	//Navigation
 	const navigate = useNavigate();
 	//Authentication credentials
@@ -37,8 +40,8 @@ function Login() {
 				password: password,
 			})
 			.then(function (response: AxiosResponse) {
-				//TODO: Store the response in the global state
-				console.log(response.data.message);
+				setToken(response.data.token);
+				setUser(response.data.user);
 				setErrorMessage(null);
 			})
 			.catch(function (error: AxiosError<errorResponse> | AxiosError) {
@@ -60,7 +63,6 @@ function Login() {
 	const handleRegister = () => {
 		navigate("/registro");
 	};
-
 	return (
 		<FloatingContainer>
 			<h1 className={classes.title}>Iniciar Sesión</h1>
