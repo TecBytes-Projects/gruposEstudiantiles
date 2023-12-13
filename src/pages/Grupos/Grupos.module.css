@@ -65,7 +65,7 @@ p {
 	color: #0f54da;
 }
 
-button:hover {
+.contenedor2 button:hover {
 	box-shadow: 0 1px 1px #000001;
 	background-color: var(--color-main-orange);
 }
