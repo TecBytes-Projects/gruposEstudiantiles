@@ -1,0 +1,26 @@
+.mainContainer {
+	background-image: url(../../assets/background.svg);
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-position: 100% 100%;
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+}
+
+.mainContainer .overlap {
+	flex-grow: 1;
+	margin-block: 3rem;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-color: var(--color-white);
+	border-radius: 60px;
+	box-shadow: 0px 4px 4px #00000040;
+	padding: 1rem;
+}
