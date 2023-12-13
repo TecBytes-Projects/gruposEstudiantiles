@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios, { AxiosResponse, AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+import { user } from "../../types/types.tsx";
 
 interface errorResponse {
 	message: string;
@@ -12,12 +13,7 @@ interface errorResponse {
 interface loginResponse {
 	message: string;
 	token: string;
-	user: {
-		id: number;
-		nombre: string;
-		correo: string;
-		rol: string;
-	};
+	user: user;
 }
 
 /**
