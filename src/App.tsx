@@ -5,6 +5,7 @@ import Blog from "./pages/Blog/Blog.tsx";
 import Grupos from "./pages/Grupos/Grupos.tsx";
 import Documents from "./pages/Documents/Documents.tsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.tsx";
+import Login from "./pages/Login/Login.tsx";
 import RecuperContrasenia from "./pages/RecuperarContrasenia/RecuperarContrasenia.tsx";
 import RootLayout from "./pages/Root.tsx";
 
@@ -41,6 +42,10 @@ const router = createHashRouter([
 			{
 				path: "/recuperar-contrasenia",
 				element: <RecuperContrasenia />,
+			},
+			{
+				path: "/login",
+				element: <Login />,
 			},
 		],
 	},

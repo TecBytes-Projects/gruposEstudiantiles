@@ -1,0 +1,48 @@
+.form {
+	width: 40%;
+	max-width: 500px;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+.inputBoxes {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	gap: 1rem;
+	width: 100%;
+}
+
+.input {
+	box-sizing: border-box;
+	width: 100%;
+	background-color: var(--color-main-white);
+	border-color: var(--color-main-blue);
+	color: var(--color-main-blue);
+	border: 1px solid var(--color-main-blue);
+}
+
+.recuperarContraseniaLink {
+	color: var(--color-main-blue);
+}
+
+.btn {
+	width: 100%;
+	margin: 0;
+}
+
+.loginBtn {
+	background-color: var(--color-main-blue);
+}
+
+.registerBtn {
+	background-color: var(--color-main-orange);
+}
+
+.errorMessage {
+	color: var(--color-main-red);
+}
