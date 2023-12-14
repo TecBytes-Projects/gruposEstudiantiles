@@ -1,28 +1,25 @@
 import { createContext, useContext, useState } from "react";
 import { user } from "../types/types";
 
+/*
+ * Context for sharing user info and token. Used for granting access to protected pages and signing the API calls
+ */
+
 interface AuthProviderProps {
 	children: React.ReactNode;
 }
 
 interface AuthContextType {
-	token: string | null;
 	user: user | null;
 	setUser: (user: user | null) => void;
-	setToken: (token: string | null) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Create the UserProvider component
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 	const [user, setUser] = useState<user | null>(null);
-	const [token, setToken] = useState<string | null>(null);
 
-	// Provide the user and setUser values to the context
 	const contextValue: AuthContextType = {
-		token,
-		setToken,
 		user,
 		setUser,
 	};

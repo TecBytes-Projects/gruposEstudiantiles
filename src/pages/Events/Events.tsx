@@ -10,8 +10,8 @@ import { useAuth } from "../../context/AuthContext";
  */
 function Events() {
 	//Get list of events from API
-	const { token } = useAuth();
-	const events = useFetch<event>("/events", token);
+	const { user } = useAuth();
+	const events = useFetch<event>("/events", user ? user.token : null);
 	return (
 		<section className={classes.mainContainer}>
 			<div className={classes.titleSection}>
@@ -19,13 +19,17 @@ function Events() {
 				{/*TODO: add button to add new event*/}
 			</div>
 			<div className={classes.carouselContainer}>
-				<CardCarousel>
-					{events.length > 0 ? (
-						events.map((event) => <EventCard key={event.id} event={event} />)
-					) : (
+				{events.length > 0 ? (
+					<CardCarousel>
+						{events.map((event) => (
+							<EventCard key={event.id} event={event} />
+						))}
+					</CardCarousel>
+				) : (
+					<div className={classes.textContainer}>
 						<p className={classes.errorText}>No hay eventos para mostrar</p>
-					)}
-				</CardCarousel>
+					</div>
+				)}
 			</div>
 		</section>
 	);

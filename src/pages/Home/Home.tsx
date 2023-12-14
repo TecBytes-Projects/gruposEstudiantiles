@@ -11,7 +11,8 @@ import { useAuth } from "../../context/AuthContext";
  */
 function Home() {
 	//Get events from API
-	const { token } = useAuth();
+	const { user } = useAuth();
+	const token = user ? user.token : null;
 	const eventsSummary = useFetch<event>("/events/summary", token);
 	//Get blog posts from API
 	const blogSummary = useFetch<blogPost>("/blog/summary", token);

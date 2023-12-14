@@ -10,8 +10,8 @@ import { useAuth } from "../../context/AuthContext.tsx";
  */
 function Blog() {
 	//Get blog posts from API
-	const { token } = useAuth();
-	const blog = useFetch<blogPost>("/blog", token);
+	const { user } = useAuth();
+	const blog = useFetch<blogPost>("/blog", user ? user.token : null);
 	//Filtered blog posts list
 	const [displayBlog, setDisplayBlog] = useState<blogPost[]>([]);
 	//Search field string

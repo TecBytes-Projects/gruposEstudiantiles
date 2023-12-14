@@ -22,8 +22,8 @@ function Documents() {
 	//Documents to be displayed after filtering
 	const [displayDocuments, setDisplayDocuments] = useState<document[]>([]);
 	//Get documents from API
-	const { token } = useAuth();
-	const documents = useFetch<document>("/documentos", token);
+	const { user } = useAuth();
+	const documents = useFetch<document>("/documentos", user ? user.token : null);
 
 	//Filter documents
 	useEffect(() => {

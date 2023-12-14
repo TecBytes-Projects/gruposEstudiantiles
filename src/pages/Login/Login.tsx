@@ -22,7 +22,7 @@ interface loginResponse {
  */
 function Login() {
 	// Modifyng the global state to store auth info
-	const { setToken, setUser } = useAuth();
+	const { setUser } = useAuth();
 	//Navigation
 	const navigate = useNavigate();
 	//Authentication credentials
@@ -40,9 +40,7 @@ function Login() {
 				password: password,
 			})
 			.then(function (response: AxiosResponse) {
-				localStorage.setItem("token", JSON.stringify(response.data.token));
 				localStorage.setItem("user", JSON.stringify(response.data.user));
-				setToken(response.data.token);
 				setUser(response.data.user);
 				setErrorMessage(null);
 			})

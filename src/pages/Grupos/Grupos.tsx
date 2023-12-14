@@ -17,8 +17,8 @@ function Grupos() {
 	//Groups to be displayed after filtering
 	const [displayGroups, setDisplayGroups] = useState<group[]>([]);
 	//Get groups from API
-	const { token } = useAuth();
-	const groups = useFetch<group>("/grupos", token);
+	const { user } = useAuth();
+	const groups = useFetch<group>("/grupos", user ? user.token : null);
 
 	//Filter groups
 	useEffect(() => {

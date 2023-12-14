@@ -23,4 +23,5 @@ export interface user {
 	nombre: string;
 	correo: string;
 	rol: string;
+	token: string;
 }

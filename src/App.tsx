@@ -54,14 +54,12 @@ const router = createHashRouter([
 ]);
 
 function App() {
-	const { setUser, setToken } = useAuth();
+	const { setUser } = useAuth();
 	//Check for existing user session
 	useEffect(() => {
 		const user = localStorage.getItem("user");
-		const token = localStorage.getItem("token");
-		if (user && token) {
+		if (user) {
 			setUser(JSON.parse(user));
-			setToken(JSON.parse(token));
 		}
 	}, []);
 
