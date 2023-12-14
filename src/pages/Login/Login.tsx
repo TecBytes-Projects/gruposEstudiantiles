@@ -22,7 +22,7 @@ interface loginResponse {
  */
 function Login() {
 	// Modifyng the global state to store auth info
-	const { token, setToken, setUser } = useAuth();
+	const { setToken, setUser } = useAuth();
 	//Navigation
 	const navigate = useNavigate();
 	//Authentication credentials
