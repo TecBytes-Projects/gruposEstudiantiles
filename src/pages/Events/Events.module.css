@@ -1,9 +1,14 @@
-.mainContainer{
-    padding: 2rem;
+.mainContainer {
+	padding: 2rem;
 }
 
-.titleSection{
-    padding-inline: 2rem;
+.titleSection {
+	padding-inline: 2rem;
+}
+
+.textContainer {
+	display: flex;
+	justify-content: center;
 }
 
 .errorText {
