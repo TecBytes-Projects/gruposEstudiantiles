@@ -6,7 +6,7 @@ import Grupos from "./pages/Grupos/Grupos.tsx";
 import Documents from "./pages/Documents/Documents.tsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.tsx";
 import Login from "./pages/Login/Login.tsx";
-import RecuperarContrasenia from "./pages/RecuperarContrasenia/RecuperarContrasenia.tsx";
+import ForgottenPassword from "./pages/ForgottenPassword/ForgottenPassword.tsx";
 import RootLayout from "./pages/Root.tsx";
 import { useEffect } from "react";
 import { useAuth } from "./context/AuthContext.tsx";
@@ -45,7 +45,7 @@ const router = createHashRouter([
 			},
 			{
 				path: "/recuperar-contrasenia",
-				element: <RecuperarContrasenia />,
+				element: <ForgottenPassword />,
 			},
 			{
 				path: "/login",

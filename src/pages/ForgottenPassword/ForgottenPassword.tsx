@@ -1,4 +1,4 @@
-import classes from "./RecuperarContrasenia.module.css";
+import classes from "./ForgottenPassword.module.css";
 import FloatingContainer from "../../components/FloatingContainer/FloatingContainer";
 import { useNavigate } from "react-router-dom";
 
