@@ -6,6 +6,7 @@ import axios, { AxiosResponse, AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { user } from "../../types/types.tsx";
 import { useAuth } from "../../context/AuthContext.tsx";
+import { toast } from "react-hot-toast";
 
 interface errorResponse {
 	message: string;
@@ -42,6 +43,8 @@ function Login() {
 			.then(function (response: AxiosResponse) {
 				localStorage.setItem("user", JSON.stringify(response.data.user));
 				setUser(response.data.user);
+				toast("Iniciaste sesión como " + response.data.user.nombre);
+				navigate("/");
 				setErrorMessage(null);
 			})
 			.catch(function (error: AxiosError<errorResponse> | AxiosError) {

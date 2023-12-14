@@ -10,6 +10,8 @@ import RecuperarContrasenia from "./pages/RecuperarContrasenia/RecuperarContrase
 import RootLayout from "./pages/Root.tsx";
 import { useEffect } from "react";
 import { useAuth } from "./context/AuthContext.tsx";
+import Register from "./pages/Register/Register.tsx";
+import { Toaster } from "react-hot-toast";
 
 /**
  * General routing
@@ -49,6 +51,10 @@ const router = createHashRouter([
 				path: "/login",
 				element: <Login />,
 			},
+			{
+				path: "/registro",
+				element: <Register />,
+			},
 		],
 	},
 ]);
@@ -63,7 +69,12 @@ function App() {
 		}
 	}, []);
 
-	return <RouterProvider router={router} />;
+	return (
+		<>
+			<RouterProvider router={router} />
+			<Toaster />
+		</>
+	);
 }
 
 export default App;
