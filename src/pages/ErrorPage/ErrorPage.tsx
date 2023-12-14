@@ -7,7 +7,7 @@ interface ErrorPageProps {
 function ErrorPage({ message }: ErrorPageProps) {
 	return (
 		<section className={classes.mainContainer}>
-			<h1>{message ? message : "La página que buscas no se encontró"}</h1>
+			<h1>{message ? message : "Error"}</h1>
 			<p className={classes.text}>
 				Ponte en contacto con un administrador si crees que es un error
 			</p>

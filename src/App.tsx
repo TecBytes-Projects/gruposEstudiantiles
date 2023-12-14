@@ -18,7 +18,7 @@ const router = createHashRouter([
 	{
 		path: "/",
 		element: <RootLayout />,
-		errorElement: <ErrorPage />,
+		errorElement: <ErrorPage message="La página que buscas no se encontró" />,
 		id: "root",
 		children: [
 			{
