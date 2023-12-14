@@ -1,29 +1,17 @@
 import classes from "./Events.module.css";
 import CardCarousel from "../../components/CardCarousel/CardCarousel";
 import EventCard from "../../components/EventCard/EventCard.tsx";
-import axios, { AxiosResponse, AxiosError } from "axios";
 import { event } from "../../types/types.ts";
-import { useEffect, useState } from "react";
+import { useFetch } from "../../customHooks/api";
+import { useAuth } from "../../context/AuthContext";
 
 /**
  * Events page
  */
 function Events() {
-	//List of events
-	const [events, setEvents] = useState<event[]>([]);
-
 	//Get list of events from API
-	useEffect(() => {
-		axios
-			.get("/events")
-			.then(function (response: AxiosResponse) {
-				setEvents(response.data);
-			})
-			.catch(function (error: AxiosError) {
-				console.log(error);
-			});
-	}, []);
-
+	const { token } = useAuth();
+	const events = useFetch<event>("/events", token);
 	return (
 		<section className={classes.mainContainer}>
 			<div className={classes.titleSection}>

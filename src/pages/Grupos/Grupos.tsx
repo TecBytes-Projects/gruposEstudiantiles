@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Grupos.module.css";
-import axios, { AxiosResponse, AxiosError } from "axios";
+import { useFetch } from "../../customHooks/api";
+import { useAuth } from "../../context/AuthContext";
 /**
  * Groups page
  */
@@ -15,8 +16,9 @@ function Grupos() {
 	const [nameSearch, setNameSearch] = useState<string>("");
 	//Groups to be displayed after filtering
 	const [displayGroups, setDisplayGroups] = useState<group[]>([]);
-	//Full list of groups
-	const [groups, setGroups] = useState<group[]>([]);
+	//Get groups from API
+	const { token } = useAuth();
+	const groups = useFetch<group>("/grupos", token);
 
 	//Filter groups
 	useEffect(() => {
@@ -29,18 +31,6 @@ function Grupos() {
 			setDisplayGroups(groups);
 		}
 	}, [nameSearch, groups]);
-
-	//Get groups from API
-	useEffect(() => {
-		axios
-			.get("/grupos")
-			.then(function (response: AxiosResponse) {
-				setGroups(response.data);
-			})
-			.catch(function (error: AxiosError) {
-				console.log(error);
-			});
-	}, []);
 
 	//Open group details
 	const handleGroupClick = (id: bigint) => {

@@ -3,36 +3,18 @@ import SummarySection from "../../components/SummarySection/SummarySection.tsx";
 import EventsSummaryCard from "../../components/EventSummaryCard/EventSummaryCard.tsx";
 import BlogSummaryCard from "../../components/BlogSummaryCard/BlogSummaryCard.tsx";
 import { event, blogPost } from "../../types/types.ts";
-import { useState, useEffect } from "react";
-import axios, { AxiosResponse, AxiosError } from "axios";
+import { useFetch } from "../../customHooks/api";
+import { useAuth } from "../../context/AuthContext";
 
 /**
  * Home page
  */
 function Home() {
-	//List of events
-	const [eventsSummary, setEventsSummary] = useState<event[]>([]);
-	//List of blog posts
-	const [blogSummary, setBlogSummary] = useState<blogPost[]>([]);
-	//Get events and blog posts from API
-	useEffect(() => {
-		axios
-			.get("/events/summary")
-			.then(function (response: AxiosResponse) {
-				setEventsSummary(response.data);
-			})
-			.catch(function (error: AxiosError) {
-				console.log(error);
-			});
-		axios
-			.get("/blog/summary")
-			.then(function (response: AxiosResponse) {
-				setBlogSummary(response.data);
-			})
-			.catch(function (error: AxiosError) {
-				console.log(error);
-			});
-	}, []);
+	//Get events from API
+	const { token } = useAuth();
+	const eventsSummary = useFetch<event>("/events/summary", token);
+	//Get blog posts from API
+	const blogSummary = useFetch<blogPost>("/blog/summary", token);
 
 	return (
 		<>

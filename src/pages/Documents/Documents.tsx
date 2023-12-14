@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import classes from "./Documents.module.css";
-import axios, { AxiosResponse, AxiosError } from "axios";
 import { FaDownload } from "react-icons/fa6";
 import { IconContext } from "react-icons";
+import { useFetch } from "../../customHooks/api";
+import { useAuth } from "../../context/AuthContext";
 
 /**
  * Documents page
@@ -20,8 +21,9 @@ function Documents() {
 	const [nameSearch, setNameSearch] = useState<string>("");
 	//Documents to be displayed after filtering
 	const [displayDocuments, setDisplayDocuments] = useState<document[]>([]);
-	//Full list of documents
-	const [documents, setDocuments] = useState<document[]>([]);
+	//Get documents from API
+	const { token } = useAuth();
+	const documents = useFetch<document>("/documentos", token);
 
 	//Filter documents
 	useEffect(() => {
@@ -34,18 +36,6 @@ function Documents() {
 			setDisplayDocuments(documents);
 		}
 	}, [nameSearch, documents]);
-
-	//Get documents from API
-	useEffect(() => {
-		axios
-			.get("/documentos")
-			.then(function (response: AxiosResponse) {
-				setDocuments(response.data);
-			})
-			.catch(function (error: AxiosError) {
-				console.log(error);
-			});
-	}, []);
 
 	//Download document
 	const handleDownloadClick = (id: bigint, token: string) => {

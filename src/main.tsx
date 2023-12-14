@@ -7,7 +7,6 @@ import { AuthProvider } from "./context/AuthContext.tsx";
 
 //TODO: change to production API
 axios.defaults.baseURL = "http://localhost:3001";
-axios.defaults.headers.common["Authorization"] = "AUTH TOKEN";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
