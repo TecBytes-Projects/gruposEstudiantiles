@@ -2,14 +2,10 @@ import { useEffect, useState } from "react";
 import classes from "./Grupos.module.css";
 import { useFetch } from "../../customHooks/api";
 import { useAuth } from "../../context/AuthContext";
+import { group } from "../../types/types";
 /**
  * Groups page
  */
-interface group {
-	id: bigint;
-	name: string;
-	category: string;
-}
 
 function Grupos() {
 	//Search field

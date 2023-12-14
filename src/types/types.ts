@@ -25,3 +25,9 @@ export interface user {
 	rol: string;
 	token: string;
 }
+
+export interface group {
+	id: bigint;
+	name: string;
+	category: string;
+}
