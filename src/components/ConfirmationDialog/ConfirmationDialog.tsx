@@ -18,7 +18,7 @@ function ConfirmationDialog({
 	handleConfirm,
 }: ConfirmationDialogProps) {
 	return (
-		<Modal show={show}>
+		<Modal show={show} handleClose={handleCancel}>
 			<div className={classes.mainContainer}>
 				<p className={classes.label}>{message}</p>
 				<div className={classes.btnContainer}>
