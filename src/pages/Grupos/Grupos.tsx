@@ -22,17 +22,18 @@ function Grupos() {
 	//Category for filter
 	const [category, setCategory] = useState<string>();
 	//Options for selecting category
-	const options = [...new Set(groups.map((group) => group.category))].map(
-		(category) => ({
-			label: category,
-			value: category,
-		})
-	);
+	const options = [
+		"Todos",
+		...new Set(groups.map((group) => group.category)),
+	].map((category) => ({
+		label: category,
+		value: category,
+	}));
 
 	//Filter groups
 	useEffect(() => {
 		let newGroups = groups;
-		if (category) {
+		if (category != "Todos") {
 			newGroups = newGroups.filter((group) => group.category === category);
 		}
 		if (nameSearch.length > 0)
