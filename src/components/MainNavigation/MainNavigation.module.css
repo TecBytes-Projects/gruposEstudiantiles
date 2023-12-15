@@ -33,6 +33,17 @@
 	list-style-type: none;
 }
 
+.list a,
+li {
+	padding-top: 1.3rem;
+	border-radius: 50px;
+	text-decoration: none;
+	color: var(--color-main-blue);
+}
+
+.list li:hover {
+	cursor: pointer;
+}
 
 .list a {
 	padding-top: 1.3rem;
@@ -46,7 +57,7 @@
 	background-color: var(--color-blue-main);
 }
 
-.drawer{
+.drawer {
 	background-color: var(--color-white);
 	height: 100vh;
 	color: var(--color-main-blue);
@@ -61,7 +72,6 @@
 		justify-content: space-between;
 	}
 }
-
 
 @media (min-width: 1401px) {
 	.navDropdown {

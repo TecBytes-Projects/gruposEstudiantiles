@@ -1,0 +1,27 @@
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.btnContainer {
+	display: flex;
+	gap: 1rem;
+}
+
+.label {
+	font-size: 1.3rem;
+	color: var(--color-white);
+	text-align: center;
+}
+
+.confirmBtn {
+	background-color: var(--color-main-red);
+}
+
+.cancelBtn {
+	background-color: var(--color-white);
+	color: var(--color-alternative-orange);
+}
