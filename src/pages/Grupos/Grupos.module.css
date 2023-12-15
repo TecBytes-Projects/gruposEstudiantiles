@@ -12,10 +12,16 @@
 .actionsContainer {
 	display: flex;
 	gap: 1rem;
+	align-items: center;
 }
 
-.giroBtn {
-	background-color: var(--color-main-orange);
+.giro {
+	box-sizing: border-box;
+	width: 150px;
+	background-color: var(--color-main-white);
+	border-color: var(--color-main-orange);
+	color: var(--color-main-blue);
+	border: 1px solid var(--color-main-orange);
 }
 
 .resultLabel {

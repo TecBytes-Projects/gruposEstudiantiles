@@ -3,10 +3,14 @@ import classes from "./Grupos.module.css";
 import { useFetch } from "../../customHooks/api";
 import { useAuth } from "../../context/AuthContext";
 import { group } from "../../types/types";
+import Select from "react-select";
 /**
  * Groups page
  */
-
+interface selectOption {
+	value: string;
+	label: string;
+}
 function Grupos() {
 	//Search field
 	const [nameSearch, setNameSearch] = useState<string>("");
@@ -15,18 +19,33 @@ function Grupos() {
 	//Get groups from API
 	const { user } = useAuth();
 	const groups = useFetch<group>("/grupos", user ? user.token : null);
+	//Category for filter
+	const [category, setCategory] = useState<string>();
+	//Options for selecting category
+	const options = [...new Set(groups.map((group) => group.category))].map(
+		(category) => ({
+			label: category,
+			value: category,
+		})
+	);
 
 	//Filter groups
 	useEffect(() => {
-		if (nameSearch.length > 0) {
-			const newGroups = groups.filter((group) =>
+		let newGroups = groups;
+		if (category) {
+			newGroups = newGroups.filter((group) => group.category === category);
+		}
+		if (nameSearch.length > 0)
+			newGroups = newGroups.filter((group) =>
 				group.name.toLowerCase().includes(nameSearch)
 			);
-			setDisplayGroups(newGroups);
-		} else {
-			setDisplayGroups(groups);
-		}
-	}, [nameSearch, groups]);
+		setDisplayGroups(newGroups);
+	}, [nameSearch, groups, category]);
+
+	//Select a category with dropdown
+	const handleSelectCategory = (option: selectOption | null) => {
+		setCategory(option?.value);
+	};
 
 	//Open group details
 	const handleGroupClick = (id: bigint) => {
@@ -49,8 +68,12 @@ function Grupos() {
 							setNameSearch(e.target.value.toLowerCase());
 						}}
 					/>
-					{/*TODO: add functionality to filter*/}
-					<button className={classes.giroBtn}>Seleccionar giro</button>
+					<Select
+						className={classes.giro}
+						options={options}
+						isSearchable
+						onChange={handleSelectCategory}
+					/>
 				</div>
 			</div>
 
