@@ -33,7 +33,7 @@ function Grupos() {
 	//Filter groups
 	useEffect(() => {
 		let newGroups = groups;
-		if (category != "Todos") {
+		if (category && category != "Todos") {
 			newGroups = newGroups.filter((group) => group.category === category);
 		}
 		if (nameSearch.length > 0)
