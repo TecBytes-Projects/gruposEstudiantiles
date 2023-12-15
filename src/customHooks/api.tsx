@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios, { AxiosResponse, AxiosError } from "axios";
 
 /*
- * Custom hooks for communication with server through APIs
+ * Custom hooks for communication with server through API
  */
 
 export function useFetch<Type>(link: string, token: string | null) {
