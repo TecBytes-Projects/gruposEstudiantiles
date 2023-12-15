@@ -12,6 +12,7 @@ import { HiOutlineBars3 } from "react-icons/hi2";
 
 import classes from "./MainNavigation.module.css";
 import Logout from "../Logout/Logout";
+import { navigationOptions } from "../../data/NavigationOptions";
 
 /**
  * Nav bar
@@ -20,35 +21,16 @@ interface MainNavigationProps {
 	userRole: string | null;
 }
 
+interface menuOptions {
+	text: string;
+	to: string;
+}
 function MainNavigation({ userRole }: MainNavigationProps) {
 	const [openMenu, setOpenMenu] = useState(false);
 	const [openLogout, setOpenLogout] = useState(false);
-	const menuOptions = [
-		{
-			text: "Home",
-			to: "/",
-		},
-		{
-			text: "Grupos",
-			to: "/grupos",
-		},
-		{
-			text: "Calendario de eventos",
-			to: "/eventos",
-		},
-		{
-			text: "Blog",
-			to: "/blog",
-		},
-		{
-			text: "Documentos",
-			to: "/documentos",
-		},
-		{
-			text: "Iniciar sesión",
-			to: "/login",
-		},
-	];
+	const menuOptions = (navigationOptions as any)[
+		userRole ? userRole : "default"
+	] as menuOptions[];
 	const showLogout = () => {
 		setOpenLogout(true);
 	};
