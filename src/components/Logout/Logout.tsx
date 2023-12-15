@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 interface LogoutProps {
 	show: boolean;
-	handleCancel: React.MouseEventHandler<HTMLButtonElement>;
+	handleCancel: () => void;
 }
 
 function Logout({ show, handleCancel }: LogoutProps) {
