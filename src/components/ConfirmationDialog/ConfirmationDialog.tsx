@@ -6,8 +6,8 @@ import classes from "./ConfirmationDialog.module.css";
 */
 interface ConfirmationDialogProps {
 	message: string;
-	handleCancel: React.MouseEventHandler;
-	handleConfirm: React.MouseEventHandler;
+	handleCancel: () => void;
+	handleConfirm: () => void;
 	show: boolean;
 }
 
@@ -32,7 +32,10 @@ function ConfirmationDialog({
 					<button
 						className={classes.confirmBtn}
 						type="button"
-						onClick={handleConfirm}
+						onClick={() => {
+							handleConfirm();
+							handleCancel();
+						}}
 					>
 						Confirmar
 					</button>
