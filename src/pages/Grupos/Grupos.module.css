@@ -90,4 +90,7 @@ p {
 	.list {
 		columns: 1;
 	}
+	.actionsContainer {
+		flex-direction: column;
+	}
 }
