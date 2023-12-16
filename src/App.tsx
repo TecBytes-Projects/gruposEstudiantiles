@@ -36,7 +36,7 @@ const router = createHashRouter([
 				element: <Blog />,
 			},
 			{
-				path: "/grupos",
+				path: "/grupos/:id?",
 				element: <Grupos />,
 			},
 			{

@@ -4,6 +4,9 @@ import { useFetch } from "../../customHooks/api";
 import { useAuth } from "../../context/AuthContext";
 import { group } from "../../types/types";
 import Select from "react-select";
+import GrupoDetails from "../../components/GrupoDetails/GrupoDetails.tsx";
+import GruposList from "../../components/GruposList/GruposList.tsx";
+import { useNavigate, useParams } from "react-router-dom";
 /**
  * Groups page
  */
@@ -12,6 +15,13 @@ interface selectOption {
 	label: string;
 }
 function Grupos() {
+	const navigate = useNavigate();
+	//Varible for showing details
+	const groupId = useParams();
+	const [showDetails, setShowDetails] = useState<boolean>(false);
+	useEffect(() => {
+		if (groupId.id) setShowDetails(true);
+	}, [groupId]);
 	//Search field
 	const [nameSearch, setNameSearch] = useState<string>("");
 	//Groups to be displayed after filtering
@@ -47,59 +57,53 @@ function Grupos() {
 	const handleSelectCategory = (option: selectOption | null) => {
 		setCategory(option?.value);
 	};
-
 	//Open group details
-	const handleGroupClick = (id: bigint) => {
-		/*TODO:create logic and delete console log*/
-		console.log(id);
+	const handleGroupClick = (id: number) => {
+		navigate("/grupos/" + id);
+	};
+	//Close the details panel
+	const handleCloseDetails = () => {
+		navigate("/grupos");
 	};
 
 	return (
-		<section className={classes.mainContainer}>
-			<div className={classes.titleSection}>
-				<div className={classes.titleContainer}>
-					<h1>Nuestros grupos</h1>
+		<div>
+			<section className={classes.mainContainer}>
+				<div className={classes.titleSection}>
+					<div className={classes.titleContainer}>
+						<h1>Nuestros grupos</h1>
+					</div>
+					<div className={classes.actionsContainer}>
+						<input
+							value={nameSearch}
+							type="text"
+							placeholder="Buscar"
+							onChange={(e) => {
+								setNameSearch(e.target.value.toLowerCase());
+							}}
+						/>
+						<Select
+							className={classes.giro}
+							options={options}
+							isSearchable
+							onChange={handleSelectCategory}
+						/>
+					</div>
 				</div>
-				<div className={classes.actionsContainer}>
-					<input
-						value={nameSearch}
-						type="text"
-						placeholder="Buscar"
-						onChange={(e) => {
-							setNameSearch(e.target.value.toLowerCase());
-						}}
-					/>
-					<Select
-						className={classes.giro}
-						options={options}
-						isSearchable
-						onChange={handleSelectCategory}
-					/>
-				</div>
-			</div>
-
-			<p className={classes.resultLabel}>
-				{displayGroups.length > 0
-					? displayGroups.length + " resultado(s)"
-					: "No hay resultados que coincidan con tu búsqueda"}
-			</p>
-
-			<div className={classes.contenedor2}>
-				<div className={classes.columna2}>
-					<ul className={classes.list}>
-						{displayGroups.length > 0
-							? displayGroups.map((group) => (
-									<li className={classes.groupElement} key={group.id}>
-										<button onClick={() => handleGroupClick(group.id)}>
-											{group.name}
-										</button>
-									</li>
-							  ))
-							: ""}
-					</ul>
-				</div>
-			</div>
-		</section>
+				<GruposList
+					displayGroups={displayGroups}
+					handleGroupClick={handleGroupClick}
+				/>
+			</section>
+			{groupId.id ? (
+				<GrupoDetails
+					key={groupId.id}
+					show={showDetails}
+					groupId={Number(groupId.id)}
+					handleClose={handleCloseDetails}
+				/>
+			) : null}
+		</div>
 	);
 }
 
