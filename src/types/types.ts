@@ -1,5 +1,5 @@
 export interface event {
-	id: bigint;
+	id: number;
 	title: string;
 	date: string;
 	time: string;
@@ -10,7 +10,7 @@ export interface event {
 }
 
 export interface blogPost {
-	id: bigint;
+	id: number;
 	title: string;
 	date: string;
 	text: string;
@@ -27,7 +27,20 @@ export interface user {
 }
 
 export interface group {
-	id: bigint;
+	id: number;
 	name: string;
 	category: string;
+}
+
+export interface groupDetails {
+	id: number;
+	name: string;
+	namePresi: string;
+	nameVice: string;
+	nameAsesor: string;
+	mision: string;
+	vision: string;
+	description: string;
+	category: string;
+	level: string;
 }
