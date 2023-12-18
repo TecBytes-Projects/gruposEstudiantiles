@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { group } from "../../types/types.ts";
-import { useAuth } from "../../context/AuthContext.tsx";
+import { useAuth } from "../../stateManagement/AuthContext.tsx";
 import Select from "react-select";
 import { useFetch } from "../../customHooks/api.tsx";
 import { toast } from "react-hot-toast";

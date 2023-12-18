@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import MainNavigation from "../components/MainNavigation/MainNavigation.tsx";
 import Footer from "../components/Footer/Footer.tsx";
-import { useAuth } from "../context/AuthContext.tsx";
+import { useAuth } from "../stateManagement/AuthContext.tsx";
 
 /**
  * General Layout

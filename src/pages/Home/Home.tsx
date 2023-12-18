@@ -4,7 +4,7 @@ import EventsSummaryCard from "../../components/EventSummaryCard/EventSummaryCar
 import BlogSummaryCard from "../../components/BlogSummaryCard/BlogSummaryCard.tsx";
 import { event, blogPost } from "../../types/types.ts";
 import { useFetch } from "../../customHooks/api";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../stateManagement/AuthContext.tsx";
 
 /**
  * Home page

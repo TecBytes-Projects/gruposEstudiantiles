@@ -3,7 +3,7 @@ import classes from "./Documents.module.css";
 import { FaDownload } from "react-icons/fa6";
 import { IconContext } from "react-icons";
 import { useFetch } from "../../customHooks/api";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../stateManagement/AuthContext";
 
 /**
  * Documents page

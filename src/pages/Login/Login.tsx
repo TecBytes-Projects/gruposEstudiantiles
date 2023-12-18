@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios, { AxiosResponse, AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { user } from "../../types/types.tsx";
-import { useAuth } from "../../context/AuthContext.tsx";
+import { useAuth } from "../../stateManagement/AuthContext.tsx";
 import { toast } from "react-hot-toast";
 
 interface errorResponse {

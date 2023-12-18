@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Grupos.module.css";
 import { useFetch } from "../../customHooks/api";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../stateManagement/AuthContext.tsx";
 import { group } from "../../types/types";
 import Select from "react-select";
 import GrupoDetails from "../../components/GrupoDetails/GrupoDetails.tsx";

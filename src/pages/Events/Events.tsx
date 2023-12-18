@@ -3,7 +3,7 @@ import CardCarousel from "../../components/CardCarousel/CardCarousel";
 import EventCard from "../../components/EventCard/EventCard.tsx";
 import { event } from "../../types/types.ts";
 import { useFetch } from "../../customHooks/api";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../stateManagement/AuthContext.tsx";
 
 /**
  * Events page

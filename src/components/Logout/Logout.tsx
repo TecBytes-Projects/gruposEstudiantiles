@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { useAuth } from "../../context/AuthContext.tsx";
+import { useAuth } from "../../stateManagement/AuthContext.tsx";
 import ConfirmationDialog from "../ConfirmationDialog/ConfirmationDialog.tsx";
 import { useNavigate } from "react-router-dom";
 /*

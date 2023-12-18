@@ -9,7 +9,7 @@ import Login from "./pages/Login/Login.tsx";
 import ForgottenPassword from "./pages/ForgottenPassword/ForgottenPassword.tsx";
 import RootLayout from "./pages/Root.tsx";
 import { useEffect } from "react";
-import { useAuth } from "./context/AuthContext.tsx";
+import { useAuth } from "./stateManagement/AuthContext.tsx";
 import Register from "./pages/Register/Register.tsx";
 import { Toaster } from "react-hot-toast";
 

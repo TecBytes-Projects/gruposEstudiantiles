@@ -3,7 +3,7 @@ import BlogPostCard from "../../components/BlogPostCard/BlogPostCard.tsx";
 import { blogPost } from "../../types/types.ts";
 import { useEffect, useState } from "react";
 import { useFetch } from "../../customHooks/api.tsx";
-import { useAuth } from "../../context/AuthContext.tsx";
+import { useAuth } from "../../stateManagement/AuthContext.tsx";
 
 /**
  * Blog page
