@@ -21,7 +21,7 @@ export function useFetch<Type>(link: string, token: string | null) {
 			.catch(function (error: AxiosError) {
 				console.log(error);
 			});
-	}, []);
+	}, [link, token]);
 
 	return data;
 }
@@ -42,7 +42,7 @@ export function useFetchDetails<Type>(link: string, token: string | null) {
 			.catch(function (error: AxiosError) {
 				console.log(error);
 			});
-	}, []);
+	}, [link, token]);
 
 	return data;
 }
