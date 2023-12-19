@@ -6,7 +6,7 @@ export interface event {
 	place: string;
 	description: string;
 	groupName: string;
-	authorizedToEdit: boolean;
+	isAuthorizedToEdit: boolean;
 }
 
 export interface blogPost {
@@ -15,7 +15,7 @@ export interface blogPost {
 	date: string;
 	text: string;
 	image: string;
-	authorizedToEdit: boolean;
+	isAuthorizedToEdit: boolean;
 }
 
 export interface user {
@@ -43,4 +43,5 @@ export interface groupDetails {
 	description: string;
 	category: string;
 	level: string;
+	isAuthorizedToEdit: boolean;
 }
