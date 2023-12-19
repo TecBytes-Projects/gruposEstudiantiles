@@ -19,9 +19,14 @@ function DetailsDrawer({ show, children, handleClose }: ModalProps) {
 				className={
 					classes.modalMain + " " + (show ? classes.open : classes.close)
 				}
+				onClick={(e) => e.stopPropagation()}
 			>
 				<div>
-					<IoIosArrowBack onClick={handleClose} size={50} />
+					<IoIosArrowBack
+						onClick={handleClose}
+						size={50}
+						className={classes.backBtn}
+					/>
 				</div>
 				{children}
 			</section>
