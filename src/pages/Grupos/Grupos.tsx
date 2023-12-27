@@ -4,7 +4,7 @@ import { useFetch } from "../../customHooks/api";
 import { useAuth } from "../../stateManagement/AuthContext.tsx";
 import { group } from "../../types/types";
 import Select from "react-select";
-import GrupoDetails from "../../components/GrupoDetails/GrupoDetails.tsx";
+import GrupoDetails from "../../components/GroupDetails/GroupDetails.tsx";
 import GruposList from "../../components/GruposList/GruposList.tsx";
 import { useNavigate, useParams } from "react-router-dom";
 /**

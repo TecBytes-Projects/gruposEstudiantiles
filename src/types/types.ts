@@ -43,5 +43,6 @@ export interface groupDetails {
 	description: string;
 	category: string;
 	level: string;
+	logo: string;
 	isAuthorizedToEdit: boolean;
 }

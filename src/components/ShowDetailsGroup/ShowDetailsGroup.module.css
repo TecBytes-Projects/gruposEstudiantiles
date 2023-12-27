@@ -1,0 +1,39 @@
+.mainContainer {
+	padding-inline: 4rem;
+	font-size: 1.2rem;
+}
+
+.rowContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+.mainContainer h2 {
+	font-size: 3rem;
+	font-weight: bolder;
+}
+
+.mainContainer p {
+	color: var(--color-white);
+}
+
+.category {
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.mainContainer img {
+	width: 30%;
+	min-width: 250px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 2rem;
+}
+
+@media (max-width: 400px) {
+	.rowContainer {
+		flex-direction: column;
+	}
+}

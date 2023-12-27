@@ -13,8 +13,7 @@
 	position: fixed;
 	background: var(--color-main-yellow);
 	width: 96%;
-	min-height: 70%;
-	height: auto;
+	height: 70%;
 	top: 20%;
 	left: 4%;
 	border-radius: 2rem 0rem 0rem 2rem;
@@ -22,6 +21,7 @@
 	animation: ease;
 	animation-name: run;
 	animation-duration: 0.3s;
+	overflow: scroll;
 }
 
 .open {

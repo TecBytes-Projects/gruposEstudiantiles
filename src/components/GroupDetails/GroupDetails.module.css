@@ -1,0 +1,11 @@
+.btnEdit {
+	background-color: var(--color-main-orange);
+	width: 10rem;
+}
+
+.btnContainer {
+	display: flex;
+	padding-inline: 4rem;
+	padding-block: 2rem;
+	justify-content: right;
+}
