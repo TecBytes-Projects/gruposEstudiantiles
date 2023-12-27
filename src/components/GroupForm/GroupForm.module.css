@@ -1,0 +1,44 @@
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form button {
+	width: 250px;
+	margin: 1rem;
+}
+
+.form select {
+	background-color: var(--color-main-orange);
+	border-radius: 2rem;
+	height: 3rem;
+	padding-left: 1rem;
+}
+
+.form option {
+	background-color: var(--color-main-orange);
+}
+
+.btnContainer {
+	margin: auto;
+	display: flex;
+}
+
+.confirmBtn {
+	background-color: var(--color-main-orange);
+}
+
+.cancelBtn {
+	background-color: var(--color-white);
+	color: var(--color-main-orange);
+}
+
+.inputImg {
+	background-color: transparent;
+}
+
+@media (max-width: 600px) {
+	.btnContainer {
+		flex-direction: column;
+	}
+}
