@@ -25,6 +25,7 @@ function EditDetailsGroup({ handleClose }: EditDetailsGroupProps) {
 				toast("Se guardaron los cambios");
 			})
 			.catch(function (error: AxiosError) {
+				toast("Ocurrió un error. No se guardaron los cambios");
 				console.log(error);
 			});
 		handleClose();
