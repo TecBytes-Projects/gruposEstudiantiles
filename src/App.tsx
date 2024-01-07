@@ -28,7 +28,7 @@ const router = createHashRouter([
 				element: <Home />,
 			},
 			{
-				path: "/eventos",
+				path: "/eventos/:id?",
 				element: <Events />,
 			},
 			{
