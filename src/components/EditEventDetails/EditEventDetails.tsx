@@ -6,7 +6,7 @@ import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import EventForm from "../EventForm/EventForm.tsx";
 /*
-/ Edit details of as event
+/ Edit details of an event
 */
 interface EditEventDetailsProps {
 	handleClose: () => void;
