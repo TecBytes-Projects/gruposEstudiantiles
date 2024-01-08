@@ -16,7 +16,7 @@ function Events() {
 	//Get list of events from API
 	const { user } = useAuth();
 	const events = useFetch<event>("/events", user ? user.token : null);
-	//Open group details
+	//Open event details
 	const handleEventClick = (id: number) => {
 		navigate("/eventos/" + id);
 	};
