@@ -11,6 +11,10 @@
 	margin: 1rem;
 }
 
+.container:hover {
+	cursor: pointer;
+}
+
 .title {
 	color: var(--color-main-white);
 	margin: 0rem;

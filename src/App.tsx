@@ -32,7 +32,7 @@ const router = createHashRouter([
 				element: <Events />,
 			},
 			{
-				path: "/blog",
+				path: "/blog/:id?",
 				element: <Blog />,
 			},
 			{
