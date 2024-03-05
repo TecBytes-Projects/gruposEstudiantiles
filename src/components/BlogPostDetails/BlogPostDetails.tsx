@@ -1,10 +1,10 @@
 import { useAuth } from "../../stateManagement/AuthContext";
 import { useFetchDetails } from "../../customHooks/api";
-import { blogPost, event } from "../../types/types";
+import { blogPost } from "../../types/types";
 import DetailsDrawer from "../DetailsDrawer/DetailsDrawer";
 import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
-import { blogPostAtom, eventAtom } from "../../stateManagement/detailsAtoms";
+import { blogPostAtom } from "../../stateManagement/detailsAtoms";
 import classes from "./BlogPostDetails.module.css";
 import EditBlogPostDetails from "../EditBlogPostDetails/EditBlogPostDetails";
 import ShowBlogPostDetails from "../ShowBlogPostDetails/ShowBlogPostDetails";
