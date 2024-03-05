@@ -35,7 +35,6 @@
 
 .list a,
 .list li {
-	padding-top: 1.3rem;
 	border-radius: 50px;
 	text-decoration: none;
 	color: var(--color-main-blue);
@@ -46,7 +45,7 @@
 }
 
 .list a {
-	padding-top: 1.3rem;
+	padding: 1rem;
 	border-radius: 50px;
 	text-decoration: none;
 	color: var(--color-main-blue);
@@ -54,7 +53,8 @@
 
 .list a:hover,
 .list a.active {
-	background-color: var(--color-blue-main);
+	background-color: var(--color-main-blue);
+	color: var(--color-white);
 }
 
 .drawer {
