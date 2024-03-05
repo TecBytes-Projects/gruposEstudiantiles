@@ -44,5 +44,6 @@ export interface groupDetails {
 	category: string;
 	level: string;
 	logo: string;
+	contact: string;
 	isAuthorizedToEdit: boolean;
 }

@@ -22,6 +22,7 @@ function GroupForm({ data, handleCancel, handleConfirm }: GroupFormProps) {
 	const [nameAsesor, setNameAsesor] = useState(data?.nameAsesor || "");
 	const [category, setCategory] = useState(data?.category || "");
 	const [logo, setLogo] = useState(data?.logo);
+	const [contact, setContact] = useState(data?.contact);
 	//Get categories
 	const { user } = useAuth();
 	const categories = useFetch<string>(
@@ -73,6 +74,12 @@ function GroupForm({ data, handleCancel, handleConfirm }: GroupFormProps) {
 				name="nameAsesor"
 				value={nameAsesor}
 				onChange={(e) => setNameAsesor(e.target.value)}
+			/>
+			<label htmlFor="contact">Contacto</label>
+			<input
+				name="contact"
+				value={contact}
+				onChange={(e) => setContact(e.target.value)}
 			/>
 			<label htmlFor="category">Giro</label>
 			<select

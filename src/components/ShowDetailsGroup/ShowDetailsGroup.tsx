@@ -43,6 +43,10 @@ function ShowDetailsGroup() {
 							<p>{data.nameAsesor}</p>
 						</div>
 					</div>
+					<div>
+						<h3>Contacto</h3>
+						<p>{data.contact}</p>
+					</div>
 				</>
 			) : (
 				<h2>El grupo que buscas no existe</h2>
