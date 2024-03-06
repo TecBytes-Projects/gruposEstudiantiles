@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import DetailsDrawer from "../DetailsDrawer/DetailsDrawer.tsx";
 import EventForm from "../EventForm/EventForm.tsx";
 /*
-/ Create a group
+/ Create an event
 */
 interface CreateEventProps {
 	handleClose: () => void;
