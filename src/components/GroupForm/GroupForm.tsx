@@ -97,6 +97,7 @@ function GroupForm({ data, handleCancel, handleConfirm }: GroupFormProps) {
 			<input
 				className={classes.inputImg}
 				type="file"
+				accept="image/png, image/gif, image/jpeg"
 				name="myImage"
 				onChange={(event) => {
 					if (event.target.files && event.target.files[0])
