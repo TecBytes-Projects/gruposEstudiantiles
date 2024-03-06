@@ -7,6 +7,7 @@ import { useAuth } from "../../stateManagement/AuthContext.tsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import EventDetails from "../../components/EventDetails/EventDetails.tsx";
+import CreateEvent from "../../components/CreateEvent/CreateEvent.tsx";
 
 /**
  * Events page
@@ -23,6 +24,8 @@ function Events() {
 	//Varible for showing details
 	const eventId = useParams();
 	const [showDetails, setShowDetails] = useState<boolean>(false);
+	//Variable for showing create new event
+	const [showCreate, setShowCreate] = useState<boolean>(false);
 	useEffect(() => {
 		if (eventId.id) setShowDetails(true);
 	}, [eventId]);
@@ -30,12 +33,27 @@ function Events() {
 	const handleCloseDetails = () => {
 		navigate("/eventos");
 	};
+	//Open drawer to create new event
+	const handleCreateNewEvent = () => {
+		setShowCreate(true);
+	};
+	//Close drawer to create new group
+	const handleCloseCreate = () => {
+		setShowCreate(false);
+	};
 	return (
 		<>
 			<section className={classes.mainContainer}>
 				<div className={classes.titleSection}>
 					<h1>Calendario de eventos</h1>
-					{/*TODO: add button to add new event*/}
+					{user?.rol ? (
+						<button
+							onClick={() => handleCreateNewEvent()}
+							className={classes.createBtn}
+						>
+							Nuevo evento
+						</button>
+					) : null}
 				</div>
 				<div className={classes.carouselContainer}>
 					{events.length > 0 ? (
@@ -62,6 +80,9 @@ function Events() {
 					eventId={Number(eventId.id)}
 					handleClose={handleCloseDetails}
 				/>
+			) : null}
+			{showCreate ? (
+				<CreateEvent show={showCreate} handleClose={handleCloseCreate} />
 			) : null}
 		</>
 	);

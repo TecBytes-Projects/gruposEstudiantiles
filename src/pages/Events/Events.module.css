@@ -3,7 +3,10 @@
 }
 
 .titleSection {
-	padding-inline: 2rem;
+	padding-inline: 4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .textContainer {
@@ -13,4 +16,8 @@
 
 .errorText {
 	color: var(--color-main-orange);
+}
+
+.createBtn {
+	background-color: var(--color-main-orange);
 }
