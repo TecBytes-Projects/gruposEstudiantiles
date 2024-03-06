@@ -3,7 +3,6 @@ import Home from "./pages/Home/Home.tsx";
 import Events from "./pages/Events/Events.tsx";
 import Blog from "./pages/Blog/Blog.tsx";
 import Grupos from "./pages/Grupos/Grupos.tsx";
-import Documents from "./pages/Documents/Documents.tsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.tsx";
 import Login from "./pages/Login/Login.tsx";
 import ForgottenPassword from "./pages/ForgottenPassword/ForgottenPassword.tsx";
@@ -12,6 +11,7 @@ import { useEffect } from "react";
 import { useAuth } from "./stateManagement/AuthContext.tsx";
 import Register from "./pages/Register/Register.tsx";
 import { Toaster } from "react-hot-toast";
+import LinkTree from "./pages/LinkTree/LinkTree.tsx";
 
 /**
  * General routing
@@ -40,8 +40,8 @@ const router = createHashRouter([
 				element: <Grupos />,
 			},
 			{
-				path: "/documentos",
-				element: <Documents />,
+				path: "/links",
+				element: <LinkTree />,
 			},
 			{
 				path: "/recuperar-contrasenia",

@@ -47,3 +47,10 @@ export interface groupDetails {
 	contact: string;
 	isAuthorizedToEdit: boolean;
 }
+
+export interface link {
+	id: number;
+	name: string;
+	url: string;
+	category: string;
+}

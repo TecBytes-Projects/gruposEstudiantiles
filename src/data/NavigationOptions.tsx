@@ -17,8 +17,8 @@ export const navigationOptions = {
 			to: "/blog",
 		},
 		{
-			text: "Documentos",
-			to: "/documentos",
+			text: "LinkTree",
+			to: "/links",
 		},
 		{
 			text: "Iniciar sesión",
@@ -44,8 +44,8 @@ export const navigationOptions = {
 			to: "/blog",
 		},
 		{
-			text: "Documentos",
-			to: "/documentos",
+			text: "LinkTree",
+			to: "/links",
 		},
 	],
 	estudiante: [
@@ -66,8 +66,8 @@ export const navigationOptions = {
 			to: "/blog",
 		},
 		{
-			text: "Documentos",
-			to: "/documentos",
+			text: "LinkTree",
+			to: "/links",
 		},
 		{
 			text: "Ver calificación",
@@ -92,8 +92,8 @@ export const navigationOptions = {
 			to: "/blog",
 		},
 		{
-			text: "Documentos",
-			to: "/documentos",
+			text: "LinkTree",
+			to: "/links",
 		},
 		{
 			text: "Calificar grupos",
