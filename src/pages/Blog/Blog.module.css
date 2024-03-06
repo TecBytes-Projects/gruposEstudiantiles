@@ -9,6 +9,12 @@
 	align-items: center;
 }
 
+.actionsContainer {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
 input {
 	background-color: var(--color-main-orange);
 }
@@ -17,6 +23,10 @@ input {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+}
+
+.createBtn {
+	background-color: var(--color-main-orange);
 }
 
 .errorText {

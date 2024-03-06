@@ -6,6 +6,7 @@ import { useFetch } from "../../customHooks/api.tsx";
 import { useAuth } from "../../stateManagement/AuthContext.tsx";
 import { useNavigate, useParams } from "react-router-dom";
 import BlogPostDetails from "../../components/BlogPostDetails/BlogPostDetails.tsx";
+import CreateBlogPost from "../../components/CreateBlogPost/CreateBlogPost.tsx";
 
 /**
  * Blog page
@@ -34,6 +35,8 @@ function Blog() {
 	const handleBlogPostClick = (id: number) => {
 		navigate("/blog/" + id);
 	};
+	//Variable for creating new group
+	const [showCreate, setShowCreate] = useState<boolean>(false);
 	//Varible for showing details
 	const blogPostId = useParams();
 	const [showDetails, setShowDetails] = useState<boolean>(false);
@@ -44,6 +47,14 @@ function Blog() {
 	const handleCloseDetails = () => {
 		navigate("/blog");
 	};
+	//Open drawer to create new blog post
+	const handleCreateNewBlogPost = () => {
+		setShowCreate(true);
+	};
+	//Close drawer to create new blog post
+	const handleCloseCreate = () => {
+		setShowCreate(false);
+	};
 	return (
 		<>
 			<section className={classes.mainContainer}>
@@ -52,6 +63,14 @@ function Blog() {
 						<h1>Blog</h1>
 					</div>
 					<div className={classes.actionsContainer}>
+						{user?.rol === "masterAdmin" || user?.rol === "admin" ? (
+							<button
+								onClick={() => handleCreateNewBlogPost()}
+								className={classes.createBtn}
+							>
+								Nuevo grupo
+							</button>
+						) : null}
 						<input
 							value={nameSearch}
 							type="text"
@@ -84,6 +103,9 @@ function Blog() {
 					blogPostId={Number(blogPostId.id)}
 					handleClose={handleCloseDetails}
 				/>
+			) : null}
+			{showCreate ? (
+				<CreateBlogPost show={showCreate} handleClose={handleCloseCreate} />
 			) : null}
 		</>
 	);

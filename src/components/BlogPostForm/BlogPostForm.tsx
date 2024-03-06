@@ -45,10 +45,11 @@ function BlogPostForm({
 				value={text}
 				onChange={(e) => setText(e.target.value)}
 			/>
-			<label htmlFor="image">Imagen</label>
+			<label htmlFor="logo">Imagen</label>
 			<input
 				className={classes.inputImg}
-				type="image"
+				type="file"
+				accept="image/png, image/gif, image/jpeg"
 				name="image"
 				onChange={(event) => {
 					if (event.target.files && event.target.files[0])
