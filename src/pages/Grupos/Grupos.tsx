@@ -7,6 +7,7 @@ import Select from "react-select";
 import GrupoDetails from "../../components/GroupDetails/GroupDetails.tsx";
 import GruposList from "../../components/GruposList/GruposList.tsx";
 import { useNavigate, useParams } from "react-router-dom";
+import CreateGroup from "../../components/CreateGroup/CreateGroup.tsx";
 /**
  * Groups page
  */
@@ -20,8 +21,12 @@ function Grupos() {
 	const groupId = useParams();
 	const [showDetails, setShowDetails] = useState<boolean>(false);
 	useEffect(() => {
-		if (groupId.id) setShowDetails(true);
+		if (groupId.id) {
+			setShowDetails(true);
+		}
 	}, [groupId]);
+	//Variable for creating new group
+	const [showCreate, setShowCreate] = useState<boolean>(false);
 	//Search field
 	const [nameSearch, setNameSearch] = useState<string>("");
 	//Groups to be displayed after filtering
@@ -65,6 +70,14 @@ function Grupos() {
 	const handleCloseDetails = () => {
 		navigate("/grupos");
 	};
+	//Open drawer to create new group
+	const handleNewGroup = () => {
+		setShowCreate(true);
+	};
+	//Close drawer to create new group
+	const handleCloseCreate = () => {
+		setShowCreate(false);
+	};
 
 	return (
 		<div>
@@ -74,6 +87,14 @@ function Grupos() {
 						<h1>Nuestros grupos</h1>
 					</div>
 					<div className={classes.actionsContainer}>
+						{user?.rol === "masterAdmin" ? (
+							<button
+								onClick={() => handleNewGroup()}
+								className={classes.createBtn}
+							>
+								Nuevo grupo
+							</button>
+						) : null}
 						<input
 							value={nameSearch}
 							type="text"
@@ -102,6 +123,9 @@ function Grupos() {
 					groupId={Number(groupId.id)}
 					handleClose={handleCloseDetails}
 				/>
+			) : null}
+			{showCreate ? (
+				<CreateGroup show={showCreate} handleClose={handleCloseCreate} />
 			) : null}
 		</div>
 	);

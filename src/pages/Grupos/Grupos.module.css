@@ -39,6 +39,10 @@
 	padding: 10px;
 }
 
+.createBtn {
+	background-color: var(--color-main-orange);
+}
+
 .list {
 	list-style-type: none;
 	columns: 2;
